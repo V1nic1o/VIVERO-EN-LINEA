@@ -1,0 +1,170 @@
+.inicio-immersive {
+  background-color: #0b1612;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.inicio-immersive .hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.inicio-immersive .hero-background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4) blur(1px);
+  z-index: 0;
+}
+
+.inicio-immersive .hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 4rem;
+  max-width: 1200px;
+}
+
+.inicio-immersive .hero-title {
+  font-size: 7.2rem;
+  font-weight: bold;
+  color: #c0ffc7;
+  text-shadow: 0 0 18px rgba(0, 255, 150, 0.6);
+}
+
+.inicio-immersive .hero-subtitle {
+  font-size: 3rem;
+  color: #e0e0e0;
+  margin-top: 2rem;
+}
+
+.inicio-immersive .hero-content .btn-outline-light.position-absolute {
+  top: 20px;
+  right: 20px;
+  font-size: 1.8rem;
+  padding: 0.7rem 1.5rem;
+}
+
+.inicio-immersive .immersive-section {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 3rem;
+}
+
+.inicio-immersive .immersive-block {
+  max-width: 1200px;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.inicio-immersive .block-title {
+  font-size: 4.4rem;
+  font-weight: bold;
+  color: #98f5a8;
+  text-shadow: 0 0 12px rgba(128, 255, 160, 0.4);
+}
+
+.inicio-immersive .block-text {
+  font-size: 2.2rem;
+  color: #ccc;
+  margin-top: 1.2rem;
+}
+
+.inicio-immersive .plant-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 10px 28px rgba(0, 255, 150, 0.08);
+}
+
+.inicio-immersive .plant-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 36px rgba(0, 255, 150, 0.12);
+}
+
+.inicio-immersive .plant-card .card-body {
+  padding: 1.5rem;
+}
+
+.inicio-immersive .plant-card .card-title {
+  font-size: 2.4rem;
+}
+
+.inicio-immersive .plant-card .card-text {
+  font-size: 1.8rem;
+}
+
+.inicio-immersive button.btn,
+.inicio-immersive .btn-success,
+.inicio-immersive .btn-outline-light {
+  font-size: 2rem;
+  padding: 1.2rem 2.2rem;
+  border-radius: 12px;
+}
+
+.inicio-immersive .btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.inicio-immersive .btn-success:hover {
+  background-color: #218838;
+}
+
+.inicio-immersive .btn-outline-light {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.inicio-immersive .btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #0b1612;
+}
+
+.inicio-immersive footer {
+  background-color: #0b1612;
+  color: #aaa;
+  border-top: 1px solid #1e2c26;
+  font-size: 1.7rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inicio-immersive .hero-title {
+    font-size: 4rem;
+  }
+
+  .inicio-immersive .hero-subtitle {
+    font-size: 2rem;
+  }
+
+  .inicio-immersive .block-title {
+    font-size: 2.8rem;
+  }
+
+  .inicio-immersive .block-text {
+    font-size: 1.5rem;
+  }
+
+  .inicio-immersive .immersive-block {
+    padding: 1rem;
+  }
+
+  .inicio-immersive .plant-card {
+    margin-bottom: 2rem;
+  }
+
+  .inicio-immersive button.btn {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.5rem;
+  }
+}

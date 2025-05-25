@@ -1,0 +1,249 @@
+/* 🎧 Estilo futurista para Modo de Voz */
+.voice-mode-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(13, 27, 22, 0.92);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  color: #aefce0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  text-align: center;
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeInVoice 0.6s ease both;
+}
+
+@keyframes fadeInVoice {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.voice-header {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00ffa2, #00e0ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(0, 255, 180, 0.3);
+}
+
+
+.voice-avatar-section {
+  margin-bottom: 20px;
+}
+
+.bot-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00ffa2;
+  box-shadow: 0 0 16px rgba(0, 255, 180, 0.3);
+  animation: pulseAvatar 3s ease-in-out infinite;
+}
+
+@keyframes pulseAvatar {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(0, 255, 180, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(0, 255, 180, 0.6);
+  }
+}
+
+.voice-subtitle {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #aefce0;
+  font-style: italic;
+}
+
+.voice-waveform .wave {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 25px auto;
+  position: relative;
+}
+
+.wave.escuchando {
+  background-color: #00ffa2;
+  box-shadow: 0 0 20px rgba(0, 255, 180, 0.4);
+}
+
+.wave.hablando {
+  background-color: #00e0ff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.wave.escuchando::after,
+.wave.hablando::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 255, 128, 0.3);
+  animation: waveRipple 1.5s infinite ease-out;
+}
+
+@keyframes waveRipple {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.voice-controls {
+  margin-top: 30px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Botones */
+.btn-mic,
+.btn-mic-off,
+.btn-salir {
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 255, 180, 0.2);
+}
+
+.btn-mic {
+  background: linear-gradient(to right, #00ffa2, #00e0ff);
+  color: #000;
+}
+
+.btn-mic-off {
+  background: linear-gradient(to right, #ff6b6b, #ff4757);
+  color: white;
+}
+
+.btn-salir {
+  background: #222;
+  color: #aefce0;
+  border: 1px solid #00ffa2;
+}
+
+.btn-mic:hover,
+.btn-mic-off:hover,
+.btn-salir:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 255, 180, 0.3);
+}
+
+/* Mensajes */
+.mensaje-reconocido {
+  margin-top: 20px;
+  background: rgba(0, 255, 180, 0.05);
+  color: #aefce0;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid #00ffa2;
+  font-size: 0.95rem;
+  max-width: 90%;
+  box-shadow: 0 2px 8px rgba(0, 255, 180, 0.08);
+}
+
+.mensaje-error-voz {
+  position: fixed;
+  bottom: 30px;
+  background-color: #ffbaba;
+  color: #4a0000;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
+  z-index: 10000;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90%;
+  text-align: center;
+  border: 1px solid #ff6b6b;
+}
+
+.mensaje-espera-voz {
+  position: fixed;
+  bottom: 80px;
+  background-color: rgba(0, 255, 180, 0.1);
+  color: #aefce0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(0, 255, 128, 0.2);
+  z-index: 9999;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90%;
+  text-align: center;
+  border: 1px solid #00ffa2;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .voice-mode-container {
+    padding: 20px;
+    justify-content: flex-start;
+    padding-top: 60px;
+  }
+
+  .voice-header {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .bot-avatar {
+    width: 85px;
+    height: 85px;
+  }
+
+  .voice-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .wave.escuchando,
+  .wave.hablando {
+    width: 55px;
+    height: 55px;
+  }
+
+  .btn-salir,
+  .btn-mic,
+  .btn-mic-off {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}

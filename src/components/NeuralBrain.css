@@ -1,0 +1,147 @@
+/* src/components/NeuralBrain.css */
+
+.neural-canvas {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #0d1a26 0%, #060a13 100%);
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 255, 170, 0.15);
+  position: relative;
+}
+
+.neural-canvas text {
+  font-family: 'Segoe UI', sans-serif;
+  fill: #00ffd0;
+  font-size: 12px;
+  pointer-events: none;
+  text-shadow: 0 0 4px rgba(0, 255, 170, 0.5);
+}
+
+.nodo-central {
+  font-size: 16px;
+  font-weight: bold;
+  fill: #00ffd0;
+  text-shadow: 0 0 6px rgba(0, 255, 170, 0.6);
+}
+
+.nodo-intencion circle {
+  transition: r 0.3s ease, fill 0.3s ease;
+  cursor: pointer;
+  filter: drop-shadow(0 0 4px rgba(0, 255, 170, 0.3));
+  animation: pulse 2s infinite;
+}
+
+.nodo-intencion circle:hover {
+  r: 24px;
+  fill: #00ffaa;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 170, 0.6));
+}
+
+.neural-canvas line {
+  stroke: #00ffd0;
+  stroke-width: 1;
+  stroke-opacity: 0.2;
+  transition: stroke-opacity 0.3s;
+}
+
+.neural-canvas line:hover {
+  stroke-opacity: 0.7;
+}
+
+@keyframes pulse {
+  0% {
+    r: 10;
+    filter: drop-shadow(0 0 4px rgba(0, 255, 170, 0.3));
+  }
+  50% {
+    r: 12;
+    filter: drop-shadow(0 0 8px rgba(0, 255, 170, 0.5));
+  }
+  100% {
+    r: 10;
+    filter: drop-shadow(0 0 4px rgba(0, 255, 170, 0.3));
+  }
+}
+
+/* Tooltip SVG personalizado */
+.nodo-intencion:hover text {
+  font-size: 14px;
+  font-weight: bold;
+  fill: #ffffff;
+}
+
+.tooltip-card {
+  background: rgba(0, 0, 0, 0.85);
+  color: #00ffd0;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid #00ffd0;
+  box-shadow: 0 0 10px rgba(0, 255, 170, 0.3);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.tooltip-card button {
+  margin-top: 6px;
+  padding: 4px 8px;
+  background-color: #00ffd0;
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tooltip-text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 12px;
+  fill: #00ffd0;
+  pointer-events: none;
+}
+
+.nodo-intencion:hover .tooltip-text {
+  opacity: 1;
+}
+
+.tooltip-card {
+  background: rgba(0, 0, 0, 0.9);
+  color: #00ffd0;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid #00ffd0;
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.3);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.tooltip-card button {
+  margin-top: 6px;
+  padding: 4px 8px;
+  background-color: #00ffd0;
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pulse-core {
+  fill: #00ffd0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    r: 24;
+    opacity: 0.8;
+  }
+  50% {
+    r: 28;
+    opacity: 0.3;
+  }
+  100% {
+    r: 24;
+    opacity: 0.8;
+  }
+}

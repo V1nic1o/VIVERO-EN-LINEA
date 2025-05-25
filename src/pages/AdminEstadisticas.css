@@ -1,0 +1,72 @@
+/* AdminEstadisticas.css */
+.dashboard-container {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #0a0f1c;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.intro-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #121c2c, #0a0f1c);
+}
+
+.intro-section h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #00ffd0;
+  text-shadow: 0 0 12px rgba(0, 255, 150, 0.3);
+}
+
+.intro-subtitle {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #bbbbbb;
+}
+
+.neural-visual-section {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #060a13;
+}
+
+.neural-brain {
+  width: 80%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed #00ffd0;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #cccccc;
+  font-style: italic;
+}
+
+.metrics-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  background-color: #0a0f1c;
+}
+
+.metric-card {
+  background: #11182b;
+  border: 1px solid #1e2944;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #00ffd0;
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.1);
+}

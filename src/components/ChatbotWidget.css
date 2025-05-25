@@ -1,0 +1,243 @@
+/* 🌿 Fondo de imagen + color oscuro con blur */
+.chatbot-widget-background {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0d1b16;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+}
+
+/* 🌱 Contenedor principal con glassmorphism 3D */
+.chatbot-card {
+  width: 100%;
+  max-width: 960px;
+  background: rgba(231, 226, 226, 0.05);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 30px rgba(0, 255, 170, 0.1);
+  padding: 2rem;
+  animation: floatIn 0.6s ease;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes floatIn {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+/* descripcion visible */
+.text-muted {
+    --bs-text-opacity: 1;
+    color: #ffffff !important;
+}
+
+/* 🪐 Título del chatbot */
+.chatbot-header h5 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  background: linear-gradient(90deg, #00ffa2, #00e0ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 6px rgba(0, 255, 180, 0.3);
+}
+.chatbot-header small {
+  font-size: 1.2rem;
+}
+
+/* 🌿 Historial de conversación con efecto tarjeta */
+.chatbot-body {
+  height: 500px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(0, 255, 128, 0.15);
+  box-shadow: inset 0 0 8px rgba(0, 255, 128, 0.05);
+}
+
+/* 💬 Mensajes con profundidad */
+.chatbot-message {
+  max-width: 80%;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  font-size: 1.25rem;
+  white-space: pre-line;
+  box-shadow: 0 4px 20px rgba(0, 255, 128, 0.08);
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+.chatbot-user {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 0;
+  align-self: flex-end;
+}
+
+.chatbot-bot {
+  background: linear-gradient(135deg, #198754, #00ffa2);
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 0;
+  align-self: flex-start;
+}
+
+/* 🎤 Grabación visual 3D */
+.microphone-bubble {
+  position: absolute;
+  bottom: 90px;
+  right: 30px;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(25,135,84,0.4) 0%, rgba(25,135,84,0.1) 70%);
+  animation: pulseBubble 1.5s infinite ease-in-out;
+  box-shadow: 0 0 20px rgba(25, 135, 84, 0.3);
+  pointer-events: none;
+}
+
+@keyframes pulseBubble {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
+/* 🎯 Opciones tipo cápsula 3D */
+.chatbot-options button {
+  min-width: 120px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 999px;
+  background-color: white;
+  border: 1px solid #00ffa2;
+  color: #00ffa2;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(168, 178, 166, 0.193);
+}
+
+.chatbot-options button:hover {
+  background-color: #00ffa2;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* 🌱 Pregunta destacada del recomendador */
+.chatbot-question {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #00ffa2;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* 🪴 Tarjeta visual final con estilo moderno */
+.chatbot-recommendation-card {
+  max-width: 320px;
+  background-color: #ffffff;
+  border: 1px solid #cde7db;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.chatbot-recommendation-card:hover {
+  transform: scale(1.02);
+}
+
+.chatbot-recommendation-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.chatbot-recommendation-card .card-body {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* 🎧 Footer y controles */
+.chatbot-footer {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.7rem;
+}
+
+.chatbot-footer input {
+  flex: 1;
+  font-size: 1.2rem;
+  border-radius: 0.7rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #00ffa2;
+  color: #00ffa2;
+  padding: 0.8rem 1rem;
+}
+
+.chatbot-footer input::placeholder {
+  color: #aefce0;
+}
+
+.chatbot-footer .btn {
+  border-radius: 0.7rem;
+  font-size: 1.3rem;
+  background: linear-gradient(to right, #00ffa2, #00e0ff);
+  color: #000;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0.8rem 1.2rem;
+}
+
+.chatbot-footer .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 255, 180, 0.3);
+}
+
+/* 🍃 Bot decorativo dentro del chatbot */
+.embedded-bot {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  width: 310px;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+  animation: floatBot 5s ease-in-out infinite, botGlow 2.5s ease-in-out infinite, sway 6s ease-in-out infinite, auraPulse 4s ease-in-out infinite;
+  filter: drop-shadow(4px 8px 12px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes floatBot {
+  0%, 100% { transform: translateY(-50%) scale(1); }
+  50% { transform: translateY(-54%) scale(1.05); }
+}
+@keyframes botGlow {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(0, 255, 128, 0.3)); }
+  50% { filter: drop-shadow(0 0 16px rgba(0, 255, 128, 0.6)); }
+}
+@keyframes sway {
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  25% { transform: translateY(-50%) rotate(1.5deg); }
+  75% { transform: translateY(-50%) rotate(-1.5deg); }
+}
+@keyframes auraPulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(0, 255, 128, 0); }
+  50% { box-shadow: 0 0 20px rgba(0, 255, 128, 0.4); }
+}
+ 
+
